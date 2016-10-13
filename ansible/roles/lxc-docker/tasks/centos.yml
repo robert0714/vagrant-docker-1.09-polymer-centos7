@@ -42,13 +42,7 @@
     version: 1.6.0
     state: present
   tags: [docker]
-
-- name: vagrant user is added to the docker group
-  user:
-    name: vagrant
-    group: docker
-  register: user_result
-  tags: [docker]
+  
 
 - name: CentOS service is running
   service:
