@@ -1,14 +1,14 @@
-- name: CentOS dirctory are copied
-  file: path=/etc/docker state=directory mode=0755
-  ignore_errors: yes
-  tags: [docker]
+#- name: CentOS dirctory are copied
+#  file: path=/etc/docker state=directory mode=0755
+#  ignore_errors: yes
+#  tags: [docker]
   
-- name: CentOS files are copied
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-  with_items: "{{ centos_files }}"
-  tags: [docker]
+#- name: CentOS files are copied
+#  copy:
+#    src: "{{ item.src }}"
+#    dest: "{{ item.dest }}"
+#  with_items: "{{ centos_files }}"
+#  tags: [docker]
   
 #- name: add repository
 #  yum_repository:
