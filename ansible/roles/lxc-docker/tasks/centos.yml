@@ -10,22 +10,27 @@
   with_items: centos_files
   tags: [docker]
   
-- name: add repository
-  yum_repository:
-    name: dockerrepo
-    description: Docker Repository
-    baseurl: https://yum.dockerproject.org/repo/main/centos/7/
-    gpgkey: https://yum.dockerproject.org/gpg
-    enabled: 1
-    gpgcheck: 1
-  ignore_errors: yes
-  tags: [docker]
+#- name: add repository
+#  yum_repository:
+#    name: dockerrepo
+#    description: Docker Repository
+#    baseurl: https://yum.dockerproject.org/repo/main/centos/7/
+#    gpgkey: https://yum.dockerproject.org/gpg
+#    enabled: 1
+#    gpgcheck: 1
+#  ignore_errors: yes
+#  tags: [docker]
 
+#- name: Docker is present
+#  yum:
+#    name: docker-engine
+#    state: latest
+#  tags: [docker]
 - name: Docker is present
-  yum:
-    name: docker-engine
-    state: latest
-  tags: [docker]
+   yum:
+     name: docker 
+     state: latest
+   tags: [docker] 
 
 - name: Python-pip is present
   yum: name=python-pip state=present
@@ -34,7 +39,7 @@
 - name: Debian docker-py is present
   pip:
     name: docker-py
-    version: 1.10.3
+    version: 1.6.0
     state: present
   tags: [docker]
 
