@@ -27,10 +27,10 @@
 #    state: latest
 #  tags: [docker]
 - name: Docker is present
-   yum:
+  yum:
      name: docker 
      state: latest
-   tags: [docker] 
+  tags: [docker] 
 
 - name: Python-pip is present
   yum: name=python-pip state=present
