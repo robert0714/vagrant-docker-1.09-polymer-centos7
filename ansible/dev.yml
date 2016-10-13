@@ -4,3 +4,4 @@
   roles:
     - common
     - lxc-docker
+    - docker-compose
