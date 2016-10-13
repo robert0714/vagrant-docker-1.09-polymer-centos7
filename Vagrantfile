@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   config.vm.define :dev do |d|
     d.vm.network "public_network", bridge: "eno4", ip: "192.168.57.36", auto_config: "false", netmask: "255.255.255.0" , gateway: "192.168.57.1"
-    d.vm.provision "shell", path: "bootstrap.sh"
+    d.vm.provision "shell", path: "bootstrap4CentOs_ansible.sh"
     d.vm.provision :shell, inline: 'ansible-playbook /vagrant/ansible/dev.yml -c local -v'
     d.vm.hostname = "books-fe-polymer-dev"
   end
